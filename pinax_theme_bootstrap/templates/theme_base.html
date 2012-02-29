@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles sekizai_tags %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
@@ -7,6 +7,9 @@
         {% block viewport %}
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% endblock %}
+        
+        {% render_block "css" %}
+        {% render_block "js" %}
 
         {% block style_base %}
             <link href="{% static "pinax/css/theme.css" %}" rel="stylesheet">
